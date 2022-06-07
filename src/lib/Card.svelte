@@ -41,7 +41,7 @@
 
     .square {
         border: 1px solid rgb(132, 101, 15);
-        font-size: calc((3 / var(--grid-size)) * 1vw);
+        font-size: auto;
         display: flex;
         justify-content: center;
         align-items: center;
