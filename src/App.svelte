@@ -52,7 +52,7 @@
 
 <main>
   {#if generated}
-    <button on:click={() => printView = !printView} class="print-view">Print view</button>
+    <button on:click={() => printView = !printView} class="print-view">🖶</button>
   {/if}
   {#if !printView}
     <h1>Bingo Generator</h1>
@@ -76,8 +76,10 @@
     left: 0;
     top: 0;
     margin: 0;  
-    background-color: rgb(219, 219, 219);
+    padding: 0;
+    background-color: transparent;
     border: 0;
+    font-size: 2em;
     color: rgb(132, 101, 15);
   }
 
