@@ -1,24 +1,24 @@
 <script lang="ts">
-  import Card from './lib/Card.svelte';
+  import Cards from './lib/Cards.svelte';
   import Setup from './lib/Setup.svelte'
   let numberOfCards: number;
   let cardSize: number; 
-  let bingoValues: string;
-  let uniqueBingoValues: string;
+  let bingoValues: string = "";
+  let uniqueBingoValues: string = "";
   let numberOfSquares = 9;
   let generated = false;
-  
   let printView = false;
 
   const generate = () => {
     numberOfSquares = cardSize * cardSize;
-    if (bingoValues.length > 0) generated = true;
+    generated = bingoValues.length > 0 ? !generated: false;
   }
 
   const parseValues = () => {
     if (bingoValues) {
       
       let parsedBingoValues = bingoValues.split('\n');
+      console.log(parsedBingoValues);
       let cardValues = [];
 
       for (let i = 0; i < cardSize * cardSize; i++) {
@@ -31,6 +31,7 @@
         cardValues[uniqueIndex] = parsedUniqueBingoValues[getRandomIndex(parsedUniqueBingoValues.length)];
       }
       
+      console.log(cardValues);
       return cardValues;
     }
   }
@@ -64,22 +65,11 @@
   {/if}
 
   {#if generated}
-    <div class="cards">
-      {#each Array(numberOfCards) as card, i}
-        <Card id={i + 1} size={cardSize} squares={numberOfSquares} values={parseValues()}/>
-      {/each}
-    </div>
+    <Cards bind:cardSize={cardSize} bind:numberOfCards={numberOfCards} bind:numberOfSquares={numberOfSquares} parseValues={parseValues}/>
   {/if}
-
 </main>
 
 <style>
-
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 6.5cm;
-  }
 
   .print-view {
     position: absolute;
