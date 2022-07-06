@@ -52,7 +52,7 @@
 
     .square {
         border: 1px solid rgb(132, 101, 15);
-        font-size: auto;
+        font-size: 0.75em;
         display: flex;
         justify-content: center;
         align-items: center;
