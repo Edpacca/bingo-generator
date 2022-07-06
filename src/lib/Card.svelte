@@ -6,7 +6,11 @@
 </script>
 
 <div class="card-wrapper">
-    <h2>card #{id}</h2>
+    <div class="card-header">
+        <img src={'/assets/diamond-gold-AE.png'} class="AE-logo" alt="AE-logo"/>
+        <h2>#{id}</h2>
+        <img src={'/assets/leaf.png'} class="leaf" alt="AE-leaf"/>
+    </div>
     <div class="card" style="--grid-size: {size}">
         {#each Array(squares) as square, i}
             <div class="square">
@@ -22,6 +26,13 @@
     .card-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .card-header {
+        display: grid;
+        grid-template-columns: 2cm 1fr 2cm;
+        width: 10cm;
+        margin: auto;
     }
 
     .card {
@@ -41,7 +52,7 @@
 
     .square {
         border: 1px solid rgb(132, 101, 15);
-        font-size: calc((3 / var(--grid-size)) * 1vw);
+        font-size: auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -50,4 +61,15 @@
         font-weight: 100;
         padding: 0.5em;
     }
+
+    .AE-logo {
+        width: 1.5cm;
+        margin: auto 0 1em 1em;
+    }
+
+    .leaf {
+        margin-top: auto;      
+        width: 1.5cm;  
+    }
+
 </style>

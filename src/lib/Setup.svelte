@@ -64,6 +64,10 @@
         width: 3em;
         border-radius: 5px;
         border: 2px solid rgb(132, 101, 15);
+        color: rgb(132, 101, 15);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.1em;
     }
 
     textarea {

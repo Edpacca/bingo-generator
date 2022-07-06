@@ -29,12 +29,17 @@ h3 {
 button {
     height: 3em;
     border-radius: 5px;
-    border: 2px solid rgb(64, 49, 6);    
+    border: 0px;
+    padding: 0.5em;    
     color: goldenrod;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2em;
     margin: 0 1em;
-    background-color: rgb(132, 101, 15);
+    background-color: rgb(53, 37, 14);
     margin-top: auto;
+}
+
+button:hover {
+  background-color: rgb(99, 66, 19);
 }
